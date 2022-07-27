@@ -1,35 +1,30 @@
-import Home from './routes/Home'
-import User from './routes/User'
-import Profile from './routes/Profile'
-import Register from './routes/Register'
-import Login from './routes/Login'
-import IndexPage from './routes/IndexPage'
 
 export default [
 	{
 		path: '/',
-		component: IndexPage,
+		component: () => import('./routes/IndexPage'),
 		routes: [
 			{
 				path: '/home',
 				redirect: true,
-				component: Home
+				models: [import('./models/home')],
+				component: () => import('./routes/Home')
 			},
 			{
 				path: '/user',
-				component: User
+				component: () => import('./routes/User')
 			},
 			{
 				path: '/profile',
-				component: Profile
+				component: () => import('./routes/Profile')
 			},
 			{
 				path: '/register',
-				component: Register
+				component: () => import('./routes/Register')
 			},
 			{
 				path: '/login',
-				component: Login
+				component: () => import('./routes/Login')
 			}
 		]
 	}

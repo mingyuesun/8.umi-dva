@@ -1,11 +1,12 @@
 import React from 'react'
+import { connect } from 'dva'
 
-function Home() {
+function Home(props) {
 	return (
 		<div>
-			Home
+			{props.title}
 		</div>
 	)
 }
 
-export default Home
+export default connect(state => state.home)(Home)

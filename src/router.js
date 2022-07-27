@@ -2,11 +2,11 @@ import React from 'react';
 import { Router, Switch } from 'dva/router';
 import routerConfig from './routerConfig'
 import { renderRoutes } from './utils/router'
-function RouterConfig({ history }) {
+function RouterConfig({ history, app }) {
   return (
     <Router history={history}>
       <Switch>
-        {renderRoutes(routerConfig)}
+        {renderRoutes(routerConfig, app)}
         {/* <Route path="/" exact component={IndexPage} /> */}
       </Switch>
     </Router>

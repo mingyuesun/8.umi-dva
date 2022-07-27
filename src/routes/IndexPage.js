@@ -13,7 +13,7 @@ function IndexPage(props) {
       <NavBar {...props}/>
       <Content>
         <Switch>
-          {renderRoutes(props.routes)}
+          {renderRoutes(props.routes, props.app)}
           <Redirect to="/home"/>
         </Switch>
       </Content>
