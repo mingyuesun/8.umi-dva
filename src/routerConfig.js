@@ -7,7 +7,7 @@ export default [
 			{
 				path: '/home',
 				redirect: true,
-				models: [import('./models/home')],
+				models: [() => import('./models/home')],
 				component: () => import('./routes/Home')
 			},
 			{
@@ -16,6 +16,7 @@ export default [
 			},
 			{
 				path: '/profile',
+				authority: true,
 				component: () => import('./routes/Profile')
 			},
 			{
